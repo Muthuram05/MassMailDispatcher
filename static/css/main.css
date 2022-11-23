@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+body {
+    background-color: #fff;
+    width: 100%;
+    height: 100vh;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+.left-container {
+    width: 60%;
+    height: 100vh;
+    overflow: scroll;
+}
+.left-container .part-1{
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.left-container .part-1 #check{
+    border-radius: 5px;
+    border: none;
+    width: 100px;
+    height: 30px;
+}
+.left-container .part-1 form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.left-container .part-2{
+    padding: 20px;
+    height: auto;
+    justify-content: space-between;
+    display: flex;
+}
+
+.right-container {
+    width: 40%;
+    height: 80vh;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.right-container .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 10%;
+}
+
+.top .name {
+    font-size: 24px;
+}
+
+.right-container form{
+    height: 90%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+form .row {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+form .row label {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 20%;
+    font-size: 20px;
+}
+
+form .row input {
+    height: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    width: 80%;
+}
+
+::placeholder {
+    color: #000;
+}
+
+::-webkit-scrollbar {
+    width: 2px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+form #btn {
+    margin: 0 auto;
+    width: 200px;
+    height: 40px;
+}
+
+textarea {
+    padding: 5px;
+    font-size: 20px;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    resize: none;
+}
+
+form .row {
+    height: 40px;
+}
+
+.bi {
+    font-size: 24px;
+    font-weight: 900;
+}
+
+#file {
+    opacity: 0;
+}
+
+
+/* upload-box Design */
+.upload-box{
+font-size:16px;
+background:white;
+border-radius:50px;
+box-shadow:5px 5px 10px black;
+width:350px;
+outline:none;
+
+}
+::-webkit-file-upload-button{
+color:white;
+background:#206a5d;
+padding:20px;
+border:none;
+border-radius:50px;
+box-shadow:1px 0px 1px 1px #6b4559;
+outline:none;
+}

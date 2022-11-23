@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mass Mail Dispatcher</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div>
+        <h1 style='text-align: center'>Mass Mail Dispatcher</h1>
+    </div>
+    <div class="container">
+        <div class="left-container">
+            <div class="part-1">
+                <h3>Upload Csv to Find a Valid or Invalid Email</h3>
+                <form action="{{url_for('check')}}" method="post" enctype="multipart/form-data">
+                    <input type="file" name="file" required class="upload-box">
+                    <br>
+                    <input type="submit" value="Check" id="check">
+                </form>
+            </div>
+            <div class="part-2">
+                <div>
+                    <h1>Valid Emails:</h1>
+                {% for data in val %}
+                {{data}}
+                    <br>
+                {% endfor %}
+                </div>
+                
+                <div>
+                    <h1>Invalid Emails:</h1>
+                    {% for data in inval %}
+                    {{data}}
+                    <br>
+                    {% endfor %}
+                </div>
+
+            </div>
+
+        </div>
+        <div class="right-container">
+            <div class="top">
+                <div class="arrow"><i class="bi bi-arrow-left"></i></div>
+                <div class="name">Compose</div>
+                <div class="pins">
+
+                    <i class="bi bi-three-dots-vertical"></i>
+                </div>
+            </div>
+            <form method="post" enctype="multipart/form-data" action="/upload/" >
+                <div class="row">
+                    <label for="fromtxt">From</label>
+                    <input type="email" name="fromtxt" id="fromtxt"  required>
+                </div>
+                <hr>
+                <div  class="row">
+                    <label for="file">To</label>
+                    <input type="file" name="file"  accept=".csv" id="file" required/>
+                </div>
+                <hr>
+                <div class="row">
+                    <label for="subject">Subject</label>
+                    <input type="text" name="subject" id="subject" required>
+                </div>
+                <hr>
+                <div class="row-area">
+                    <textarea name="message" id="message" cols="30" rows="10" required placeholder="Compose"></textarea>
+                    <!-- <input type="text" name="message" placeholder="message" id="message" required> -->
+                </div>                
+                <input type = "submit" value="Send" id="btn">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

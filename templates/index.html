@@ -16,7 +16,7 @@
             <div class="part-1">
                 <h3>Upload Csv to Find a Valid or Invalid Email</h3>
                 <form action="{{url_for('check')}}" method="post" enctype="multipart/form-data">
-                    <input type="file" name="file" required class="upload-box">
+                    <input type="file" name="file" required class="upload-box" accept=".csv"> 
                     <br>
                     <input type="submit" value="Check" id="check">
                 </form>
@@ -43,7 +43,7 @@
         </div>
         <div class="right-container">
             <div class="top">
-                <div class="arrow"><i class="bi bi-arrow-left"></i></div>
+                <div class="arrow"  style="cursor:pointer;" onclick="fun()"><i class="bi bi-arrow-left"></i></div>
                 <div class="name">Compose</div>
                 <div class="pins">
 
@@ -74,5 +74,14 @@
             </form>
         </div>
     </div>
+<script>
+    function fun(){
+   document.getElementById("fromtxt").value =""
+   document.getElementById("file").value =""
+   document.getElementById("subject").value =""
+   document.getElementById("message").value =""
+    }
+</script>
 </body>
 </html>
+
